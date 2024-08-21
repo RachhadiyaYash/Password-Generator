@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="">
+            <!-- Title -->
+            <h1 class="text-3xl font-bold mb-6 text-white">Password Generator</h1>
+
+            <!-- Generated Password Field -->
+            <div class="flex  ">
+                <p class="text-white uppercase mb-2 ">
+                    Generated Password
+                </p>
+            </div>
+            <div class="flex items-center mb-4   rounded-md justify-between bg-[#25183C]">
+                <div>
+                    <input type="text" id="password" readonly
+                        class="w-full px-4 py-2 -md bg-[#25183C] rounded-md text-white border-none focus:outline-none focus:ring-0 hover:border-none">
+
+
+                </div>
+                <div class="flex justify-end items-center">
+                    <button onclick="copyPassword()" class="px-2"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="#9D56C0" class="bi bi-clipboard" viewBox="0 0 16 16">
+                            <path
+                                d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z" />
+                            <path
+                                d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z" />
+                        </svg></button>
+                    <button onclick="generatePassword()" class="px-2"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="#9D56C0" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                            <path
+                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                            <path fill-rule="evenodd"
+                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                        </svg></button>
+                </div>
+            </div>
+            <div class="flex justify-between  ">
+                <p class="text-white uppercase mb-2 ">
+                    Character Length
+                </p>
+                <p class="text-white">
+                    <span id="lengthValue">16</span>
+                </p>
+            </div>
+            <div class="flex items-center p-3  mb-4 rounded-md justify-between bg-[#25183C]">
+                <label for="length" class="text-white px-4">4 </label>
+                <input type="range" id="length" min="4" max="16" value="8"
+                    class="w-full appearance-none h-2 bg-gray-300 rounded focus:outline-none">
+                <label for="length" class="text-white px-2">16 </label>
+            </div>
+
+
+            <div class="flex ">
+                <p class="text-white uppercase mb-2">
+                    Settings
+                </p>
+            </div>
+            <div class="flex items-center justify-between mb-2 bg-[#25183B] rounded-lg p-4">
+                <span class="mr-4 text-white">Include Uppercase</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="uppercase" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center justify-between mb-2 bg-[#25183B] rounded-lg p-4">
+                <span class="mr-4 text-white">Include Lowercase</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="lowercase" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center justify-between mb-2 bg-[#25183B] rounded-lg p-4">
+                <span class="mr-4 text-white">Include Numbers</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="numbers" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="flex items-center justify-between mb-2 bg-[#25183B] rounded-lg p-4">
+                <span class="mr-4 text-white">Include Symbols</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="symbols" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button onclick="generatePassword()"
+                class=" text-white px-6 py-3  my-4 w-full rounded-md focus:outline-none hover:bg-[#25183B] bg-[#CD60FF] ">
+                <p>
+                    Generate Password
+                </p>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+
+</html>

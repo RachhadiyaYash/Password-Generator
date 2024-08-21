@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800|Poppins:300,400,600,900&display=swap');
+
+p,
+input::placeholder,
+select,
+input,
+button,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+::placeholder,
+h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F7E8FE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main-container {
+    background-color: #090311;
+    padding: 20px;
+    margin: 3px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+
+}
+
+
+
+.toggle-switch {
+    position: relative;
+    width: 42px;
+    height: 22px;
+    background-color: #C661F8;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-switch .slider {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: gray;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch input:checked+.slider {
+    transform: translateX(20px);
+}
+
+.toggle-switch input:checked+.slider {
+    background-color: #FFEFFF;
+}
+
+.toggle-switch.on {
+    background-color: #FFEFFF;
+}
